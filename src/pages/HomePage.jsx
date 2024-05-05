@@ -10,9 +10,11 @@ export default function HomePage() {
   return (
     <div className="w-full flex justify-center mt-4">
       <div className="container p-5 md:p-0 lg:p-5 grid grid-cols-1 lg:grid-cols-6 gap-3 relative">
-        <div className="space-y-5 col-span-4">{articleComponents}</div>
-        <div className="col-span-2 shadow-lg h-fit border rounded-lg p-4">
-          <div className="hidden lg:flex flex-col items-start top-5 sticky space-y-3">
+        <div className="space-y-5 col-span-1 md:col-span-4">
+          {articleComponents}
+        </div>
+        <div className="col-span-2 shadow-lg h-fit border rounded-lg p-4 hidden lg:flex">
+          <div className="flex flex-col items-start top-5 sticky space-y-3">
             <div className="w-full flex justify-center items-center">
               <img
                 src={img}
@@ -31,10 +33,9 @@ export default function HomePage() {
             <div className="w-full flex justify-center items-center mt-3">
               <button
                 type="button"
-                className=" w-fit bg-red-400 p-2 flex rounded-lg"
+                className=" w-fit bg-red-100 p-2 rounded-lg"
               >
-                <FaPowerOff className="mr-2 mt-1 text-2xl" />
-                <span className="text-xl">Déconnection</span>
+                <FaPowerOff className="text-2xl" />
               </button>
             </div>
           </div>

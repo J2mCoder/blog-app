@@ -23,10 +23,10 @@ export default function Articles() {
               </div>
             </div>
             <div className="line-clamp-5 mt-2">
-              <div className=" text-2xl leading-6">
+              <div className=" text-2xl leading-6 font-semibold">
                 Lorem ipsum dolor sit amet
               </div>
-              <div className="text-left leading-5">
+              <div className="text-left text-gray-500 mt-3 leading-5">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Tempora odit nostrum officiis accusantium esse perspiciatis,
                 magnam eos sequi dignissimos architecto sit possimus, optio quod
