@@ -5,7 +5,7 @@ export default function Articles() {
   return (
     <div>
       <div className="grid grid-cols-5 space-x-3 shadow-lg rounded-lg border">
-        <div className="col-span-5 row-span-1 md:col-span-2 overflow-hidden h-[200px] bg-red-200 md:h-fit rounded-lg">
+        <div className="col-span-5 row-span-1 md:col-span-2 overflow-hidden h-[200px] md:h-fit rounded-lg">
           <img
             src={img}
             className="w-full h-[250px] object-cover rounded-lg hover:scale-110 transition-all duration-300"
