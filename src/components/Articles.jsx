@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import img from "../assets/img.jpg"
 import { CiRead } from "react-icons/ci"
 
@@ -45,7 +46,9 @@ export default function Articles() {
                 className="bg-zinc-950 p-1 w-[140px] rounded-lg font-semibold flex space-x-2 text-lg text-white justify-center items-center"
               >
                 <CiRead className="text-2xl" />
-                <span className="">Poursuivre</span>
+                <Link to={"/post/1"} className="">
+                  Poursuivre
+                </Link>
               </button>
             </div>
           </div>
