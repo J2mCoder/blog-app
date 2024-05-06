@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 export default function Viewpost() {
   return (
     <>
-      <div className="w-full flex justify-center my-4">
+      <div className="w-full flex justify-center mt-4">
         <div className="container p-5 md:p-0 lg:p-5 space-y-5">
           <div className=" flex flex-col space-x-3 shadow-lg rounded-lg border">
             <div className="p-4 flex flex-col">
@@ -94,8 +94,24 @@ export default function Viewpost() {
           </div>
         </div>
       </div>
-      <Comments />
-      <AllComment />
+      <div className="w-full flex justify-center">
+        <div className="container p-5 md:p-0 lg:p-5">
+          <Comments />
+          <div className="my-6 w-full flex justify-center">
+            <div className="container p-5 md:p-0 lg:p-5 border shadow-lg rounded-lg">
+              <div className="p-2 border-b text-xl font-semibold shadow-sm">
+                <p>Tous les commentaires (0)</p>
+              </div>
+              <AllComment />
+              <AllComment />
+              <AllComment />
+              <AllComment />
+              <AllComment />
+              <AllComment />
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
@@ -103,7 +119,7 @@ export default function Viewpost() {
 function Comments() {
   return (
     <form action="/post/1" method="post">
-      <div className="my-6 w-full flex justify-center">
+      <div className=" w-full flex justify-center">
         <div className="container p-5 md:p-0 lg:p-5 space-y-5 border shadow-lg rounded-lg">
           <div className="flex flex-col p-4">
             <div className="flex flex-col">
@@ -131,43 +147,50 @@ function Comments() {
 
 function AllComment() {
   return (
-    <div className="my-6 w-full flex justify-center">
-      <div className="container p-5 md:p-0 lg:p-5 space-y-5 border shadow-lg rounded-lg">
-        <div className="w-full flex flex-col p-2 space-y-3">
-          <div className="p-2 border-b text-xl font-semibold shadow-sm">
-            <p>Tous les commentaires (0)</p>
-          </div>
-          {/* ici map des commentaires */}
-          <div className="flex flex-col border p-2 rounded-lg shadow-md">
-            <div className="w-full flex justify-between">
-              <div className=" bg-black text-white p-1 rounded-lg">
-                @john doe
-              </div>
-              <div className="flex space-x-1">
-                <div className="bg-black text-white p-1 rounded-lg">
-                  Sat May 04 2024 01:43:24
-                </div>
-                <button className="bg-black p-1 text-xl rounded-lg text-white focus:bg-black/80 transition-all">
-                  <LuPencil />
-                </button>
-                <button className="bg-black p-1 text-xl rounded-lg text-white focus:bg-black/80 transition-all">
-                  <MdDeleteOutline />
-                </button>
-                <button className="bg-black p-1 text-xl rounded-lg text-white focus:bg-black/80 transition-all">
-                  <FiEyeOff />
-                </button>
-              </div>
+    <div className="w-full flex flex-col p-2 space-y-2">
+      {/* ici map des commentaires */}
+      <div className="flex flex-col border p-2 rounded-lg bg-slate-200/30 shadow-md">
+        <div className="w-full flex justify-between">
+          <div className=" bg-black text-white p-1 rounded-lg">@john doe</div>
+          <div className="flex space-x-1">
+            <div className="bg-black text-white p-1 rounded-lg">
+              Sat May 04 2024 01:43:24
             </div>
-            <div className="w-full">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
-              dolorem omnis laudantium quas, velit ipsum incidunt quia
-              temporibus nihil quis debitis consequuntur accusantium illum
-              consequatur iure culpa sunt aliquid facilis.
+            <div className=" hidden md:flex space-x-1">
+              <button className="bg-black p-1 text-xl rounded-lg text-white focus:bg-black/80 transition-all">
+                <LuPencil />
+              </button>
+              <button className="bg-black p-1 text-xl rounded-lg text-white focus:bg-black/80 transition-all">
+                <MdDeleteOutline />
+              </button>
+              <button className="bg-black p-1 text-xl rounded-lg text-white focus:bg-black/80 transition-all">
+                <FiEyeOff />
+              </button>
             </div>
           </div>
-          {/* ici map des commentaires */}
+        </div>
+        <div className="w-full">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
+          dolorem omnis laudantium quas, velit ipsum incidunt quia temporibus
+          nihil quis debitis consequuntur accusantium illum consequatur iure
+          culpa sunt aliquid facilis.
+        </div>
+        <div className="flex justify-between items-center md:hidden">
+          <div className="">jean</div>
+          <div className="space-x-1 mt-3">
+            <button className="bg-black p-1 text-xl rounded-lg text-white focus:bg-black/80 transition-all">
+              <LuPencil />
+            </button>
+            <button className="bg-black p-1 text-xl rounded-lg text-white focus:bg-black/80 transition-all">
+              <MdDeleteOutline />
+            </button>
+            <button className="bg-black p-1 text-xl rounded-lg text-white focus:bg-black/80 transition-all">
+              <FiEyeOff />
+            </button>
+          </div>
         </div>
       </div>
+      {/* ici map des commentaires */}
     </div>
   )
 }
