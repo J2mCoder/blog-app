@@ -1,28 +1,32 @@
+import { useState } from "react"
 import { FiCamera } from "react-icons/fi"
+import { IoMdCloseCircleOutline } from "react-icons/io"
 
 export default function CreatePost() {
   const blogCategories = [
-    { id: "web-development", name: "Développement Web" },
-    { id: "ui-ux-design", name: "Design UI/UX" },
-    { id: "technology-gadgets", name: "Technologie et Gadgets" },
-    { id: "health-wellness", name: "Santé et Bien-être" },
-    { id: "travel", name: "Voyage" },
-    { id: "food-cuisine", name: "Cuisine et Gastronomie" },
-    { id: "education-learning", name: "Éducation et Apprentissage" },
-    { id: "entrepreneurship", name: "Entrepreneuriat" },
-    { id: "personal-finance", name: "Finance Personnelle" },
-    { id: "culture-art", name: "Culture et Art" },
-    { id: "fashion-beauty", name: "Mode et Beauté" },
-    { id: "sustainable-living", name: "Développement Durable" },
-    { id: "gaming-esports", name: "Jeux Vidéo et eSports" },
-    { id: "science-research", name: "Science et Recherche" },
-    { id: "literature-writing", name: "Littérature et Écriture" },
-    { id: "digital-marketing", name: "Marketing Digital" },
-    { id: "photography", name: "Photographie" },
-    { id: "parenting-family", name: "Parentalité et Famille" },
-    { id: "sports-activity", name: "Sport et Activité Physique" },
-    { id: "news-politics", name: "Actualités et Politique" },
+    { name: "Développement Web" },
+    { name: "Design UI/UX" },
+    { name: "Technologie et Gadgets" },
+    { name: "Santé et Bien-être" },
+    { name: "Voyage" },
+    { name: "Cuisine et Gastronomie" },
+    { name: "Éducation et Apprentissage" },
+    { name: "Entrepreneuriat" },
+    { name: "Finance Personnelle" },
+    { name: "Culture et Art" },
+    { name: "Mode et Beauté" },
+    { name: "Développement Durable" },
+    { name: "Jeux Vidéo et eSports" },
+    { name: "Science et Recherche" },
+    { name: "Littérature et Écriture" },
+    { name: "Marketing Digital" },
+    { name: "Photographie" },
+    { name: "Parentalité et Famille" },
+    { name: "Sport et Activité Physique" },
+    { name: "Actualités et Politique" },
   ]
+
+  const [tabCategory, setTabCategory] = useState([])
 
   return (
     <form action="/create-post" method="post">
@@ -56,18 +60,45 @@ export default function CreatePost() {
                   </div>
                   <select
                     name="category"
-                    className="space-y-3 bg-black text-white p-2 rounded-lg"
+                    className="bg-black text-white p-2 rounded-lg"
+                    onChange={(e) => {
+                      const selectedCategoryId = e.target.value.trim()
+                      if (!tabCategory.includes(selectedCategoryId)) {
+                        setTabCategory([...tabCategory, selectedCategoryId])
+                      }
+                    }}
                   >
                     <option value="">-- Choisir une catégorie</option>
                     {blogCategories.map((category) => {
                       return (
-                        <option key={category.id} value={category.id}>
+                        <option key={category.name} value={category.name}>
                           {category.name}
                         </option>
                       )
                     })}
                   </select>
                 </div>
+              </div>
+
+              <div className="w-full my-3 flex flex-wrap gap-3 transition-all duration-500">
+                {tabCategory.map((category) => {
+                  return (
+                    <div
+                      key={category}
+                      className="bg-black text-white p-2 rounded-lg flex justify-center items-center space-x-2 text-xl"
+                    >
+                      <div className="text-2xl -mt-2">{category}</div>
+                      <IoMdCloseCircleOutline
+                        className="text-xl cursor-pointer"
+                        onClick={() =>
+                          setTabCategory(
+                            tabCategory.filter((item) => item !== category)
+                          )
+                        }
+                      />
+                    </div>
+                  )
+                })}
               </div>
               <div className="w-full">
                 <textarea

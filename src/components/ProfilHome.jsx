@@ -1,10 +1,10 @@
-import img from "../assets/img.jpg"
 import { FaPowerOff } from "react-icons/fa"
+import img from "../assets/img.jpg"
 
 export default function ProfilHome() {
   return (
-    <div className="col-span-2 shadow-lg h-fit border rounded-lg p-4 hidden lg:flex">
-      <div className="flex flex-col items-start top-5 sticky space-y-3">
+    <div className="col-span-2 shadow-lg h-fit border rounded-lg p-4 hidden lg:flex sticky top-5">
+      <div className="flex flex-col items-start  space-y-3">
         <div className="w-full flex justify-center items-center">
           <img
             src={img}
